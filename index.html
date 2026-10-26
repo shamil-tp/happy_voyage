@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Journey, Fasil! · Austria Bound · MSc Computer Science</title>
+  <meta name="description" content="Happy Journey Fasil! Celebrating your departure for MSc Computer Science in Austria with generative Truchet art.">
+  <meta name="theme-color" content="#edf5f0">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Happy Journey, Fasil! · Austria Bound">
+  <meta property="og:description" content="Wishing Fasil the best for MSc Computer Science in Austria 🇦🇹">
+  <meta property="og:type" content="website">
+
+  <!-- Typography: Unbounded, Space Grotesk, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Animated Generative Canvas -->
+  <canvas id="truchet-canvas"></canvas>
+
+  <!-- Sticky Top Header (Matches Screenshot) -->
+  <header class="site-header">
+    <a href="#" class="brand-wrapper" id="brand-link">
+      <span class="brand-logo">Shamil TP</span>
+      <span class="brand-tag">AUSTRIA BOUND 🇦🇹</span>
+    </a>
+    <div class="header-actions">
+      <button class="btn-header-menu" id="btn-menu" aria-label="Toggle Menu">Menu</button>
+    </div>
+  </header>
+
+  <!-- Viewport 100vh Centered Main Container -->
+  <main class="page-container">
+
+    <!-- Hero Card (Faithful to Screenshot with Fasil's Photo) -->
+    <section class="hero-section" id="hero-card-section">
+      <article class="brutal-card animate-card-entrance">
+        
+        <!-- Top Row: Title + Framed Photo -->
+        <div class="card-top-row">
+          <header class="card-header-title">
+            <h1 class="title-line-1">Happy Journey</h1>
+            <div class="title-line-2">Fasil</div>
+          </header>
+
+          <!-- Fasil's Photo Frame -->
+          <div class="profile-photo-wrapper" id="photo-trigger" title="Fasil · Austria Bound">
+            <picture>
+              <source srcset="photo.heic" type="image/heic">
+              <source srcset="photo.jpg" type="image/jpeg">
+              <img src="photo.jpg" alt="Fasil" class="profile-photo" id="fasil-photo" loading="eager">
+            </picture>
+            <span class="photo-flag-badge" title="Destination: Austria">🇦🇹</span>
+          </div>
+        </div>
+
+        <!-- Academic & Travel Subtitle -->
+        <div class="card-subtitle">
+          <span class="meta-line meta-highlight">
+            <span class="meta-icon">🎓</span> MSc Computer Science · Austria
+          </span>
+          <span class="meta-line">
+            <span class="meta-icon">✈️</span> Kerala, India 🇮🇳 → Austria 🇦🇹
+          </span>
+        </div>
+
+        <!-- Heartfelt Message -->
+        <p class="card-body-text">
+          Wishing you smooth flights, inspiring lectures, and groundbreaking research as you pursue your 
+          <strong>MSc in Computer Science in Austria</strong>! May your algorithms compile with zero errors 
+          and your journey open boundless new horizons.
+        </p>
+
+        <!-- Buttons Row -->
+        <div class="card-buttons-row">
+          <button class="btn-brutal btn-brutal-dark" id="btn-bon-voyage">
+            Bon Voyage ✨
+          </button>
+          <button class="btn-brutal btn-brutal-outline" id="btn-open-pass">
+            Boarding Pass 🎫
+          </button>
+        </div>
+
+        <!-- Full-width Regenerate Button -->
+        <button class="btn-brutal btn-brutal-full" id="btn-regen" aria-label="Regenerate pattern">
+          <span class="btn-icon">🔀</span> Regenerate pattern
+        </button>
+
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Floating Bottom Pill Bar (Exact to Screenshot) -->
+  <aside class="floating-bottom-bar" aria-label="Generative Controls">
+    <div class="pill-container">
+      <span class="pill-label" id="pill-label-trigger" title="Switch Palette">
+        Generative <span id="current-palette-name" class="pill-seed-tag">Classic</span>
+      </span>
+      <button class="pill-button-surprise" id="btn-surprise" aria-label="Surprise me with new pattern">
+        🔀 Surprise me
+      </button>
+    </div>
+  </aside>
+
+  <!-- Minimal Menu Popover (Palette & Flow Controls) -->
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-dialog">
+      <div class="menu-dialog-header">
+        <h3>Palette &amp; Motion</h3>
+        <button class="btn-close-menu" id="btn-close-menu">×</button>
+      </div>
+      <div class="menu-dialog-body">
+        <p class="menu-hint">Select a seeded palette:</p>
+        <div class="palette-grid">
+          <button class="palette-option active" data-palette="classic">
+            <span class="palette-dot" style="background: #009f6b;"></span>
+            Shamil Classic
+          </button>
+          <button class="palette-option" data-palette="sunset">
+            <span class="palette-dot" style="background: #d97706;"></span>
+            Sunset Voyage
+          </button>
+          <button class="palette-option" data-palette="cyber">
+            <span class="palette-dot" style="background: #06b6d4;"></span>
+            Cyberpunk
+          </button>
+          <button class="palette-option" data-palette="kerala">
+            <span class="palette-dot" style="background: #047857;"></span>
+            Kerala Backwaters
+          </button>
+          <button class="palette-option" data-palette="monochrome">
+            <span class="palette-dot" style="background: #18181b;"></span>
+            Monochrome
+          </button>
+        </div>
+
+        <div class="motion-toggle-row">
+          <span>Flow Animation</span>
+          <button class="btn-toggle-flow" id="btn-toggle-flow">Active ⚡</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boarding Pass Souvenir Modal (Kerala CCJ -> Austria VIE) -->
+  <div class="modal-overlay" id="modal-boarding-pass" role="dialog" aria-modal="true" aria-label="Fasil Boarding Pass">
+    <div class="ticket-wrapper">
+      <div class="ticket-header">
+        <div class="ticket-header-left">
+          <span class="ticket-brand">AUSTRIA AIRWAYS · SPECIAL FLIGHT</span>
+          <span class="ticket-sub">MSC COMPUTER SCIENCE EXPEDITION</span>
+        </div>
+        <span class="ticket-type">SCHOLAR 🎓</span>
+      </div>
+
+      <div class="ticket-body">
+        <div class="ticket-flight-row">
+          <div class="flight-point">
+            <h4>CCJ</h4>
+            <p>Kozhikode, India 🇮🇳</p>
+          </div>
+          <div class="flight-route-info">
+            <div class="flight-plane-icon">✈️</div>
+            <span class="flight-code-badge">FLIGHT AT-2024</span>
+          </div>
+          <div class="flight-point" style="text-align: right;">
+            <h4>VIE</h4>
+            <p>Austria 🇦🇹</p>
+          </div>
+        </div>
+
+        <div class="ticket-details-grid">
+          <div class="ticket-detail">
+            <h5>Passenger</h5>
+            <p>FASIL</p>
+          </div>
+          <div class="ticket-detail">
+            <h5>Degree Program</h5>
+            <p>MSc Computer Science</p>
+          </div>
+          <div class="ticket-detail">
+            <h5>Destination</h5>
+            <p>Austria 🇦🇹</p>
+          </div>
+          <div class="ticket-detail">
+            <h5>Class</h5>
+            <p>HONORS SCHOLAR</p>
+          </div>
+          <div class="ticket-detail">
+            <h5>Seat</h5>
+            <p>01A (Window)</p>
+          </div>
+          <div class="ticket-detail">
+            <h5>Future</h5>
+            <p>UNLIMITED 🚀</p>
+          </div>
+        </div>
+
+        <div class="ticket-pattern-bar" id="ticket-pattern-container"></div>
+      </div>
+
+      <div class="ticket-footer">
+        <button class="btn-brutal btn-brutal-outline" id="btn-close-pass">Close</button>
+        <button class="btn-brutal btn-brutal-dark" id="btn-print-pass">Print Ticket 🖨️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
