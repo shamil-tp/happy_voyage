@@ -282,8 +282,8 @@ body {
 /* Fasil Photo Frame */
 .profile-photo-wrapper {
   position: relative;
-  width: 76px;
-  height: 76px;
+  width: 94px;
+  height: 94px;
   flex-shrink: 0;
   border: var(--border-width) solid var(--border-color);
   box-shadow: var(--shadow-brutal-sm);
@@ -312,13 +312,13 @@ body {
   position: absolute;
   bottom: -6px;
   right: -6px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1;
   background-color: #ffffff;
   border: 1.5px solid var(--border-color);
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -866,8 +866,8 @@ body {
     gap: 11px;
   }
   .profile-photo-wrapper {
-    width: 64px;
-    height: 64px;
+    width: 78px;
+    height: 78px;
   }
   .card-body-text {
     font-size: 0.88rem;
@@ -891,8 +891,8 @@ body {
     gap: 10px;
   }
   .profile-photo-wrapper {
-    width: 68px;
-    height: 68px;
+    width: 82px;
+    height: 82px;
   }
   .floating-bottom-bar {
     right: 14px;
