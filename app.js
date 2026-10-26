@@ -30,7 +30,7 @@ function mulberry32(a) {
 // Seeded Palettes (Matching Screenshot)
 const PALETTES = {
   classic: {
-    name: 'Shamil Classic',
+    name: 'Voyage Classic',
     bg: '#edf5f0',
     colors: ['#009f6b', '#fca8b1', '#794bf3', '#18181b'],
     accent: '#009f6b'
