@@ -440,7 +440,7 @@ function setupEvents() {
   if (btnBonVoyage) {
     btnBonVoyage.addEventListener('click', () => {
       fireConfetti();
-      showToast('🇦🇹 Bon Voyage, Fasil! All the best for MSc CS in Austria!');
+      showToast('🇦🇹 Bon Voyage, Fasil P! All the best for MSc CS in Austria!');
     });
   }
 
@@ -449,7 +449,7 @@ function setupEvents() {
   if (photoTrigger) {
     photoTrigger.addEventListener('click', () => {
       fireConfetti();
-      showToast('🎓 Fasil · Austria Bound for MSc Computer Science! 🇦🇹');
+      showToast('🎓 Fasil P · Austria Bound for MSc Computer Science! 🇦🇹');
     });
   }
 
